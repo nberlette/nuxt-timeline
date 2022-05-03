@@ -14,10 +14,10 @@ subcomponent elements if their value is non-null.
 ```ts
 declare interface TimelinePoint {
   title: string;
-  url?: string | URL;
-  date?: string | Date;
+  url?: string;
+  date?: string;
   description?: string;
-  tags?: Array<string>;
+  tags?: string[];
 }
 ```
 

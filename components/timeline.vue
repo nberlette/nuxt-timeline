@@ -5,15 +5,16 @@
    * respective sub-component elements if they are non-null.
    * @interface {TimelinePoint}
    * @property {string} title
-   * @property {string | URL} [url]
-   * @property {string | Date} [date]
+   * @property {string} [url]
+   * @property {string} [date]
    * @property {string} [description]
    */
   declare interface TimelinePoint {
-    title: string
-    url?: string | URL
-    date?: string | Date
-    description?: string
+    title: string;
+    url?: string;
+    date?: string;
+    description?: string;
+    tags?: string[];
   }
 
   /**

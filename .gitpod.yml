@@ -7,13 +7,13 @@ tasks:
 
 github:
   prebuilds:
-   master: true
-   branches: true
-   pullRequests: true
-   pullRequestsFromForks: true
-   addBadge: true
-   addCheck: true
-   addLabel: gitpod
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addBadge: true
+    addCheck: true
+    addLabel: gitpod
 
 gitConfig:
   commit.gpgsign: "true"
