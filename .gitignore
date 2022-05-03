@@ -10,3 +10,5 @@ node_modules
 .env
 .env.*
 !.env.project
+dist
+dist/**/*
