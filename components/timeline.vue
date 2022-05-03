@@ -1,15 +1,38 @@
 <script setup lang="ts">
-interface TimelinePoint {
+/**
+ * Title is the only required property of TimelinePoint.
+ * All other properties will only display their data and
+ * respective sub-component elements if they are non-null.
+ * @interface {TimelinePoint}
+ * @property {string} title
+ * @property {string | URL} [url]
+ * @property {string | Date} [date]
+ * @property {string} [description]
+ */
+declare interface TimelinePoint {
   title: string;
   url?: string | URL;
   date?: string | Date;
   description?: string;
 }
-const props = defineProps({
-  timelinePoints: {
-    type: Array,
-  },
-});
+
+/**
+ * We can use one of two methods for defining our component props:
+ *  1. defined as a general type assertion, as seen here
+ *  2. defined as the arguments of `defineProps`
+ *
+ * You may *not* mix the two, however. You cannot, for example, do:
+ * ```ts
+ * const props = defineProps<{ points: Array<any> }>({
+ *    points: {
+ *      type: Array
+ *    }
+ * })
+ * ```
+ */
+const props = defineProps<{
+  points: Array<TimelinePoint>;
+}>();
 </script>
 
 <template>
@@ -29,7 +52,7 @@ const props = defineProps({
     </div>
     <div
       class="flex my-10 group"
-      v-for="(point, index) in props.timelinePoints.sort(
+      v-for="(point, index) in props.points.sort(
         ({ date: a }, { date: b }) => +Date.parse(b) - +Date.parse(a)
       )"
       :key="index"
@@ -72,7 +95,8 @@ const props = defineProps({
             class="
               px-2
               py-0.5
-              border border-b-2 border-gray-300
+              border-t
+              ring-1 ring-b-2 ring-gray-300
               shadow-sm
               cursor-default
               hover:shadow-sm
@@ -103,18 +127,14 @@ const props = defineProps({
           "
         >
           <a
-            :href="point.url"
+            :href="new URL(point.url).href"
             class="
               peer
               underline
               decoration-1 decoration-wavy decoration-blue-300
             "
-            :title="
-              (point.date
-                ? new Date(point.date).toLocaleDateString('en-US') + ': '
-                : '') + point.title
-            "
-            aria-label="{{ point.title }}"
+            :title="point.title"
+            :aria-label="point.title"
             v-if="point.url"
           >
             <span class="cursor-pointer">{{ point.title }}</span>
@@ -140,7 +160,7 @@ const props = defineProps({
 
         <div
           class="flex justify-start group p-0 m-0"
-          v-if="index + 1 == timelinePoints.length"
+          v-if="index + 1 == points.length"
         >
           <div
             class="

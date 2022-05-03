@@ -7,9 +7,9 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@brlt/prettier": "1.6.4",
     "nuxt": "3.0.0-rc.1",
-    "nuxt-windicss": "^2.3.1",
-    "vue-property-decorator": "^9.1.2",
-    "windicss": "^3.5.1"
+    "nuxt-windicss": "2.3.1",
+    "prettier": "2.6.2"
   }
 }
