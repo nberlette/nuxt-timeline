@@ -83,20 +83,12 @@ const props = defineProps<{
       <div
         class="justify-between w-full mx-8 text-left gap-y-0.5 flex flex-col"
       >
-        <div
-          class="text-medium text-gray-600 my-1"
-          style="
-            text-decoration: 1px underline wavy #c000;
-            font-family: 'Operator Mono Lig', 'Dank Mono', dm, 'MonoLisa', ml;
-          "
-          v-if="point.date"
-        >
+        <div class="text-medium text-gray-600 my-1 font-mono" v-if="point.date">
           <span
             class="
               px-2
               py-0.5
-              border-t
-              ring-1 ring-b-2 ring-gray-300
+              border border-b-2 border-gray-300
               shadow-sm
               cursor-default
               hover:shadow-sm
@@ -123,11 +115,10 @@ const props = defineProps<{
             w-full
             pb-1
             mt-2
-            ring-offset-2 ring-offset-gray-600
           "
         >
           <a
-            :href="new URL(point.url).href"
+            :href="point.url"
             class="
               peer
               underline

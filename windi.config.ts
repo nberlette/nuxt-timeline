@@ -4,7 +4,20 @@ export default defineConfig({
   darkMode: 'media',
   theme: {
     extend: {
-      // ...
+      fontFamily: {
+        mono: [
+          'Operator Mono SSM Lig',
+          'Operator Mono Lig',
+          'Operator Mono',
+          'Dank Mono',
+          'dm',
+          'MonoLisa',
+          'ml',
+          'Fira Code',
+          'ui-monospace',
+          'SFMono-Regular',
+        ],
+      },
     },
   },
   attributify: {
