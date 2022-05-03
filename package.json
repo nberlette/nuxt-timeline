@@ -1,15 +1,40 @@
 {
+  "name": "nuxt-timeline",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Nicholas Berlette <nick@berlette.com>",
   "private": true,
+  "repository": "nberlette/nuxt-timeline-component",
+  "homepage": "https://github.com/nberlette/nuxt-timeline-component#readme",
+  "readme": "https://github.com/nberlette/nuxt-timeline-component#readme",
+  "bugs": "https://github.com/nberlette/nuxt-timeline-component/issues",
+  "description": "Simple example of a Timeline Component implementation for Nuxt 3, as a minimal chronological list of some personal projects.",
+  "keywords": [
+    "nuxt",
+    "nuxt3",
+    "component",
+    "timeline",
+    "example"
+  ],
+  "packageManager": "pnpm@7.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "lint": "prettier --ignore-path=.gitignore -c .",
+    "format": "prettier --ignore-path=.gitignore -w ."
   },
+  "prettier": "@brlt/prettier/vue",
   "devDependencies": {
     "@brlt/prettier": "1.6.4",
     "nuxt": "3.0.0-rc.1",
     "nuxt-windicss": "2.3.1",
-    "prettier": "2.6.2"
+    "prettier": "2.6.2",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.7"
   }
 }
