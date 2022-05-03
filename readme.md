@@ -1,4 +1,4 @@
-<h1><img src="https://icns.ml/nuxtdotjs.svg" alt="" width="32" align="left"> <code>nuxt-timeline</code></h1>
+<h1><img src="https://icns.ml/nuxtdotjs.svg" alt="" width="32" align="left"> <code>nuxt-timeline-component</code></h1>
 
 Simple Timeline Component for Nuxt 3. Shown here is an example implementation: a chronological list of some personal projects of mine, ordered by newest item first.
 
