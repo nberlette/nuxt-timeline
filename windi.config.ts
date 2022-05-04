@@ -6,7 +6,7 @@ export default defineConfig({
     extend: {
       fontFamily: {
         mono: [
-          'Operator Mono SSM Lig',
+          'Operator Mono SSm Lig',
           'Operator Mono Lig',
           'Operator Mono',
           'Dank Mono',
@@ -20,11 +20,7 @@ export default defineConfig({
       },
     },
   },
-  attributify: {
-    prefix: '',
-    separator: '-',
-    disable: [],
-  },
+  attributify: true,
   shortcuts: {
     'underline-wavy-blue': 'underline decoration-1 decoration-wavy decoration-blue-300',
   },

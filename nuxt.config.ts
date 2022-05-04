@@ -12,6 +12,7 @@ export default defineNuxtConfig({
         '.git',
         '.github',
         '.nuxt',
+        '.output',
         // testing files & folders
         'coverage',
         '**/__snapshots__',

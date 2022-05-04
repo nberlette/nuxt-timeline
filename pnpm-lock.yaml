@@ -2,19 +2,33 @@ lockfileVersion: 5.3
 
 specifiers:
   "@brlt/prettier": 1.6.4
-  nuxt: 3.0.0-rc.1
+  "@types/marked": 4.0.3
+  "@types/prismjs": 1.26.0
+  highlight.js: ^11.5.1
+  marked: 4.0.15
+  nuxt: 3.0.0-rc.2
   nuxt-windicss: 2.3.1
   prettier: 2.6.2
-  typescript: ^4.6.4
-  vite: ^2.9.7
+  prismjs: 1.28.0
+  typescript: 4.6.4
+  ufo: ^0.8.3
+  vite: 2.9.7
+  vue: 3.2.33
 
 devDependencies:
   "@brlt/prettier": 1.6.4
-  nuxt: 3.0.0-rc.1_vite@2.9.7
+  "@types/marked": 4.0.3
+  "@types/prismjs": 1.26.0
+  highlight.js: 11.5.1
+  marked: 4.0.15
+  nuxt: 3.0.0-rc.2_vite@2.9.7
   nuxt-windicss: 2.3.1_vite@2.9.7
   prettier: 2.6.2
+  prismjs: 1.28.0
   typescript: 4.6.4
+  ufo: 0.8.3
   vite: 2.9.7
+  vue: 3.2.33
 
 packages:
   /@ampproject/remapping/2.2.0:
@@ -969,6 +983,13 @@ packages:
       "@types/tough-cookie": 4.0.2
     dev: true
 
+  /@types/marked/4.0.3:
+    resolution:
+      {
+        integrity: sha512-HnMWQkLJEf/PnxZIfbm0yGJRRZYYMhb++O9M36UCTA9z53uPvVoSlAwJr3XOpDEryb7Hwl1qAx/MV6YIW1RXxg==,
+      }
+    dev: true
+
   /@types/node/17.0.31:
     resolution:
       {
@@ -980,6 +1001,13 @@ packages:
     resolution:
       {
         integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==,
+      }
+    dev: true
+
+  /@types/prismjs/1.26.0:
+    resolution:
+      {
+        integrity: sha512-ZTaqn/qSqUuAq1YwvOFQfVW1AR/oQJlLSZVustdjwI+GZ8kr0MSHBj0tsXPW1EqHubx50gtBEjbPGsdZwQwCjQ==,
       }
     dev: true
 
@@ -3360,6 +3388,14 @@ packages:
       type-fest: 0.8.1
     dev: true
 
+  /highlight.js/11.5.1:
+    resolution:
+      {
+        integrity: sha512-LKzHqnxr4CrD2YsNoIf/o5nJ09j4yi/GcH5BnYz9UnVpZdS4ucMgvP61TDty5xJcFGRjnH4DpujkS9bHT3hq0Q==,
+      }
+    engines: { node: ">=12.0.0" }
+    dev: true
+
   /hookable/5.1.1:
     resolution:
       {
@@ -4121,6 +4157,15 @@ packages:
       semver: 6.3.0
     dev: true
 
+  /marked/4.0.15:
+    resolution:
+      {
+        integrity: sha512-esX5lPdTfG4p8LDkv+obbRCyOKzB+820ZZyMOXJZygZBHrH9b3xXR64X4kT3sPe9Nx8qQXbmcz6kFSMt4Nfk6Q==,
+      }
+    engines: { node: ">= 12" }
+    hasBin: true
+    dev: true
+
   /mdn-data/2.0.14:
     resolution:
       {
@@ -4703,10 +4748,10 @@ packages:
       - webpack
     dev: true
 
-  /nuxt/3.0.0-rc.1_vite@2.9.7:
+  /nuxt/3.0.0-rc.2_vite@2.9.7:
     resolution:
       {
-        integrity: sha512-fdy0gMmmHMLL4VRFlKw70M+R/ISkEmF0+QMgxmXIk8ecairlfhghKlIzpFOr9ESECJKl6LeJcHIcGiAZkvU4sA==,
+        integrity: sha512-fJH/txUCf8CM8LOPl8ycqjUOBHToHToHzAPglnPZNtwe2w6YxAxUbwLZT1oYRBweCmVA0KFu+rjcHAicgn1v8Q==,
       }
     engines: { node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0 }
     hasBin: true
@@ -5477,6 +5522,14 @@ packages:
         integrity: sha512-6UqkYefdogmzqAZWzJ7laYeJnaXDy2/J+ZqiiMtS7t7OfpXWTlaeGMwX8U6EFvPV/YWWEKRkS8hKS4k60WHTOg==,
       }
     engines: { node: ^14.13.1 || >=16.0.0 }
+    dev: true
+
+  /prismjs/1.28.0:
+    resolution:
+      {
+        integrity: sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==,
+      }
+    engines: { node: ">=6" }
     dev: true
 
   /process-nextick-args/2.0.1:

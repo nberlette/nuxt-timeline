@@ -1,70 +1,107 @@
-<script setup>
+<script lang="ts" setup>
+  useHead({
+    title: 'Nuxt Timeline Component',
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon.png'
+      }
+    ]
+  })
+
   const points = [
     {
-      title: 'supacolors.ml',
-      url: 'https://supacolors.ml',
-      date: '2022-05-01',
-      description: 'Supabase UI color palettes as a package.',
-      tags: ['website', 'project', 'css']
+      date: new Date().toDateString(),
+      title: 'Feature highlights',
+      description: `
+- [x] **Markdown supported** (this is using it!)
+- [x] Syntax highlighting for embedded code
+- [x] Works in Nuxt **and** Vue 3 (probably more, too, but I haven't tested)
+- [x] Styled with WindiCSS via \`nuxt-windicss\` package
+
+\`\`\`json
+{
+  "name": "nuxt-timeline-component",
+  "version": "1.0.0",
+  "author": "Nicholas Berlette <nick@berlette.com>",
+  "license": "MIT",
+  "private": false
+}
+\`\`\`
+`
     },
     {
-      title: 'typehaus.org',
-      url: 'https://typehaus.org',
-      date: '2022-04-04',
-      description: `Beautiful open source typefaces and typography resources.`,
-      tags: ['website', 'project', 'fonts']
+      title: 'Getting Started',
+      description: `Inside \`app.vue\` (or one of your pages), we need to define an array of Timeline Points to render with the component. It is the only required property.
+\`\`\`ts
+// \<script setup\>
+const points = [
+  {
+    title: 'First',
+    date: '2022-05-01',
+    description: 'We make it.'
+  },
+  {
+    title: 'Then',
+    description: '...we break it. So we can fix it.'
+  },
+  {
+    title: 'Finally',
+    description: '${'\\`'}lint${'\\`'} it, ${'\\`'}commit${'\\`'} it, and repeat.'
+  }
+]
+\`\`\`
+
+After that, just add \`<Timeline />\` to your template block:
+
+\`\`\`vue
+<template>
+  <Timeline :points="points" />
+</template>
+\`\`\``
     },
     {
-      title: 'canbus.app',
-      url: 'https://wiki.canbus.app',
-      date: '2021-10-10',
-      description: 'Wiki and resources for learning about the automotive Controller Area Network.',
-      tags: ['website', 'project', 'CAN']
+      title: 'TimelineProps',
+      description: `\`\`\`ts
+/**
+ * @interface {TimelineProps}
+ * @property {TimelinePoint[]} points - Used to construct the timeline. Required.
+ * @property {boolean} [noMarkdown] - Disable markdown rendering for all TimelinePoints.
+ * @property {boolean} [noNumbers] - Disable the CSS-based step numbers for each TimelinePoint.
+ */
+declare interface TimelineProps {
+  points: TimelinePoint[];
+  noMarkdown?: boolean;
+  noNumbers?: boolean;
+}
+\`\`\``
     },
     {
-      title: 'icns.ml',
-      url: 'https://icns.ml',
-      date: '2021-10-01',
-      description:
-        'SimpleIcons as a Service - SVG icons rendered on the Edge. Generate dynamically colored icons with lightning-fast response time.',
-      tags: ['website', 'project', 'vercel', 'svg']
+      title: 'TimelinePoint',
+      description: `
+\`\`\`ts
+declare interface TimelinePoint {
+  // title is the only required property
+  title: string;
+  // adding a URL changes the title into a link
+  url?: string;
+  // adding a timestamp renders it just above the title
+  date?: string;
+  // markdown is supported in description
+  description?: string;
+  // ...or just **dangerously** inject HTML, raw dog
+  html?: string;
+  // future use (not yet implemented)
+  tags?: string[];
+}
+\`\`\``
     },
     {
-      title: '@brlt/n',
-      date: '2022-04-20',
-      description: 'Use the right package manager.',
-      tags: ['package', 'npm', 'cli']
-    },
-    {
-      title: 'dotfiles',
-      url: 'https://dotfiles.ml',
-      date: '2022-04-20',
-      description:
-        'My personal bash environment and other config files (dotfiles). Setup for zero-config usage with Gitpod Workspaces.',
-      tags: ['package', 'gitpod']
-    },
-    {
-      title: 'berlette.net',
-      url: 'https://berlette.net',
-      date: '2022-04-20',
-      description:
-        'Landing page for various sites, services, and apps in my network that are currently available to the public. Check em out!',
-      tags: ['website', 'personal']
-    },
-    {
-      title: 'harx',
-      url: 'https://github.com/nberlette/harx',
-      date: '2021-03-20',
-      description: 'Extract and restore website date from HAR files (HTTP Archives).',
-      tags: ['package', 'npm', 'cli'],
-      archived: true
-    },
-    {
-      title: 'malanna.page',
-      date: '07-09-2021',
-      description:
-        'A memorial microsite for a fur-covered family member who passed away in 2021. Powered by Vercel and Prismic.',
-      tags: ['website', 'personal']
+      title: 'Questions? Comments? Contributions?',
+      description: `Check out the [GitHub Repository](https://github.com/nberlette/nuxt-timeline). If you've found a bug or have a feature request, please [create an issue](https://github.com/nberlette/nuxt-timeline/issues/new) and consider submitting a Pull Request!
+      
+  Contributions are warmly welcomed. Thank you! 😁`
     }
   ]
 </script>
@@ -73,7 +110,7 @@
   <div class="max-w-3xl w-auto mx-auto my-10">
     <Header />
     <div>
-      <Timeline :points="points" />
+      <Timeline :points="points" numbers markdown />
     </div>
     <Footer />
   </div>

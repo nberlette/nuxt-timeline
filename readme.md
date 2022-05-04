@@ -21,9 +21,9 @@ declare interface TimelinePoint {
 }
 ```
 
-<a href="https://stackblitz.com/edit/nuxt-timeline" target="_blank" rel="noopener noreferer" title="Edit on StackBlitz ⚡️"><img src="https://cdn.berlette.com/svg/open-in-stackblitz.svg" alt="Edit on Stackblitz" height="32"></a>
-<a href="https://codesandbox.io/s/github/nberlette/nuxt-timeline/tree/main" target="_blank" rel="noopener noreferer" title="Open in CodeSandbox ⚡️"><img src="https://cdn.berlette.com/svg/open-in-codesandbox.svg?123" alt="Edit on CodeSandbox" height="32"></a>
-<a href="https://gitpod.io/#https://github.com/nberlette/nuxt-timeline" target="_blank" rel="noopener noreferrer" title="Open in Gitpod"><img src="https://cdn.berlette.com/svg/open-in-gitpod.svg?" alt="Open in Gitpod" height="32"></a>
+<a href="https://stackblitz.com/edit/nuxt-timeline" target="_blank" rel="noopener noreferer" title="Open in StackBlitz ⚡️" class="inline-flex"><img src="https://cdn.berlette.com/svg/open-in-stackblitz.svg" alt="Open in StackBlitz ⚡️" height="32"></a>
+<a href="https://codesandbox.io/s/github/nberlette/nuxt-timeline/tree/main" target="_blank" rel="noopener noreferer" title="Open in CodeSandbox 📦" class="inline-flex"><img src="https://cdn.berlette.com/svg/open-in-codesandbox.svg?123" alt="Open in CodeSandbox 📦" height="32"></a>
+<a href="https://gitpod.io/#https://github.com/nberlette/nuxt-timeline" target="_blank" rel="noopener noreferrer" title="Open in Gitpod 👨🏽‍💻" class="inline-flex"><img src="https://cdn.berlette.com/svg/open-in-gitpod.svg?" alt="Open in Gitpod 👨🏽‍💻" height="32"></a>
 
 ---
 
