@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import Slugger from 'github-slugger'
   import hljs from 'highlight.js/lib/core'
   import bash from 'highlight.js/lib/languages/bash'
   import handlebars from 'highlight.js/lib/languages/handlebars'
@@ -8,6 +9,7 @@
   import md from 'highlight.js/lib/languages/markdown'
   import xml from 'highlight.js/lib/languages/xml'
   import { marked } from 'marked'
+  const slugify = new Slugger()
 
   hljs.registerLanguage('bash', bash)
   hljs.registerLanguage('xml', xml)
@@ -44,6 +46,8 @@
   }
 
   /**
+   * 
+   * 
    * @interface {TimelineProps}
    * @property {TimelinePoint[]} points - Used to construct the timeline. Required.
    * @property {boolean} [noMarkdown] - Disable markdown rendering for all TimelinePoints.
@@ -113,6 +117,7 @@
             >{{ new Date(point.date).toLocaleDateString('en-US') }}</span
           >
         </div>
+        <a :name="slugify.slug(point.title)" :id="slugify.slug(point.title)"></a>
         <h2 class="font-medium text-3xl md:text-3xl font-display block w-full pb-1 mt-0">
           <a
             :href="point.url"
@@ -123,7 +128,6 @@
           >
             <span class="cursor-pointer">{{ point.title }}</span>
           </a>
-
           <span class="cursor-default" v-else>{{ point.title }}</span>
         </h2>
         <div
@@ -135,7 +139,7 @@
         </div>
 
         <div class="flex justify-start group p-0 m-0" v-if="index + 1 == props.points.length">
-          <div class="w-2.5 h-2.5 rounded-full bg-blue-200 relative -ml-14 -bottom-11"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-blue-200 relative -left-14 -ml-px -bottom-9"></div>
         </div>
       </div>
     </div>
@@ -145,8 +149,7 @@
 <style>
   @import 'highlight.js/styles/github-dark-dimmed.css';
   pre {
-    @apply bg-gray-800 text-gray-200 px-3 py-2.5 rounded-md my-2;
-    @apply whitespace-pre-wrap break-words;
+    @apply bg-gray-800 text-gray-200 px-3 py-2.5 rounded-md mt-5 mb-3 whitespace-pre-wrap break-words;
   }
   pre > code {
     @apply whitespace-pre-wrap break-words;
@@ -154,6 +157,6 @@
   pre > code,
   pre,
   code {
-    font-family: 'Operator Mono Lig', 'Dank Mono', dm, 'MonoLisa', ml, 'Fira Code', 'Fira Mono' !important;
+    font-family: 'Operator Mono Lig', 'Dank Mono', dm, 'MonoLisa', ml, 'Fira Code', 'Fira Mono', 'Courier New', Courier, monospace !important;
   }
 </style>
