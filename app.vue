@@ -1,6 +1,6 @@
 <script lang="ts" setup>
   useHead({
-    title: 'Nuxt Timeline Component',
+    title: 'Timeline Component for Vue and Nuxt',
     link: [
       {
         rel: 'icon',
@@ -15,14 +15,16 @@
       date: new Date().toDateString(),
       title: 'Feature highlights',
       description: `
-- [x] **Markdown supported** (this is using it!)
-- [x] Syntax highlighting for embedded code
-- [x] Works in Nuxt **and** Vue 3 (probably more, too, but I haven't tested)
-- [x] Styled with WindiCSS via \`nuxt-windicss\` package
+- [x] Developed with zero-config as a core principle
+- [x] Written in TypeScript, using Vue 3's Composition API
+- [x] Styled with WindiCSS, easily customizable for whatever your use case is.
+- [x] Automatic step numbers, in pure CSS. Disable with \`noNumbers\` prop.
+- [x] **Supports Markdown out-of-the-box.** Disable it with the \`noMarkdown\` prop.
+- [x] Includes syntax highlighting with \`highlight.js\`.
 
 \`\`\`json
 {
-  "name": "nuxt-timeline-component",
+  "name": "nuxt-timeline",
   "version": "1.0.0",
   "author": "Nicholas Berlette <nick@berlette.com>",
   "license": "MIT",
@@ -34,6 +36,9 @@
     {
       title: 'Getting Started',
       description: `Inside \`app.vue\` (or one of your pages), we need to define an array of Timeline Points to render with the component. It is the only required property.
+
+[**See the TimelinePoint typedefs below ›››**](#timelinepoint)  
+
 \`\`\`ts
 // \<script setup\>
 const points = [
@@ -53,7 +58,9 @@ const points = [
 ]
 \`\`\`
 
-After that, just add \`<Timeline />\` to your template block:
+### Then add it to \`app.vue\`, or any page, or component...
+
+[**See the TimelineProps typedefs below ›››**](#timelineprops)
 
 \`\`\`vue
 <template>
