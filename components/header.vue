@@ -1,28 +1,25 @@
 <template>
   <header class="w-full flex flex-col">
-    <div class="w-12 h-12 mx-auto bg-black px-0.5 ring-4 ring-gray-300 rounded-full">
-      <img
-        src="https://cdn.berlette.com/brand/logo.svg"
-        alt=""
-        align="left"
-        width="48"
-        height="48"
-        class="w-12 h-12 mr-3"
-      />
-    </div>
+    <a href="https://github.com/nberlette" target="_blank" rel="noopener noreferer" class="block text-center mb-2">
+      <div class="w-12 h-12 mx-auto bg-black px-0.5 ring-4 ring-gray-300 rounded-full block">
+        <img
+          src="https://cdn.berlette.com/brand/logo.svg"
+          alt=""
+          align="left"
+          width="48"
+          height="48"
+          class="w-12 h-12 mr-3 mb-2"
+        />
+      </div><br>
+      <span class="text-center font-semibold text-xs md:text-base xl:text-lg text-gray-500 underline mx-auto w-fit">@nberlette</span>
+    </a>
     <h1
-      class="text-center place-items-center justify-center mx-4 my-5 text-3xl md:text-5xl font-thin tracking-tight flex gap-x-3"
+      class="text-center mx-4 mt-4 mb-8 text-3xl md:text-5xl font-thin tracking-tight"
     >
-      <span class="underline decoration-1 decoration-wavy decoration-blue-300">nuxt-timeline-component</span>
+      <a href="https://github.com/nberlette/nuxt-timeline" title="View nuxt-timeline on GitHub" class="underline decoration-1 decoration-wavy decoration-blue-300 hover:decoration-violet-400 duration-300 transition-all ease-in text-gray-900">nuxt-timeline-component</a>
     </h1>
-    <h2 class="w-full text-center font-light text-xs md:text-base xl:text-lg text-gray-500 mb-20">
-      <strong class="font-medium">Free Open Source Software</strong> by
-      <a href="https://github.com/nberlette" target="_blank" rel="noopener noreferer" class="underline font-medium"
-        >Nicholas Berlette</a
-      >
-    </h2>
     <ul
-      class="flex flex-row list-none m-0 p-0 !gap-2 w-full place-items-center align-center justify-around text-center mx-auto"
+      class="flex flex-row list-none m-0 mt-10 p-0 !gap-2 w-full place-items-center align-center justify-around text-center mx-auto"
     >
       <li class="list-none flex-grow align-center">
         <a
